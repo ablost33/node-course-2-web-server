@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// process.env is an object that sotres all of our environment values as key value pairs
+const port = process.env.PORT || 3000;
 // specify an absolute path
 hbs.registerPartials(__dirname +'/views/partials');
 
@@ -79,6 +81,6 @@ app.get('/bad', (req,res) =>{
 
 
 // app.listen binds the app to a port on our machine, use port 3000
-app.listen(3000, () =>{
+app.listen(port, () =>{
 	console.log('server is up!')
 });
